@@ -1,6 +1,12 @@
 (function ($) {
   "use strict";
 
+  /* Preloader Effect */
+  var $window = $(window); 
+	$window.on('load', function(){
+		$(".udot_preloader").fadeOut(600);
+	});
+
   /*==== one page menu  ====*/
   var top_offset = $(".one_page").height() + 0;
   $(".one_page .udot_menu .nav_scroll").onePageNav({

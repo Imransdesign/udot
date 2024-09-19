@@ -202,6 +202,51 @@ span.divider_text {
 	padding: 9px 25px;
 }
 
+.udot_preloader{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10000;
+	background-color: #fff3f2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.loading-container,
+.loading{
+	height: 100px;
+	position: relative;
+	width: 100px;
+	border-radius: 100%;
+}
+
+.loading-container{
+	margin: 40px auto;
+}
+
+.loading{
+	border: 1px solid transparent;
+	border-color: transparent #ff0603 transparent #ff0603;
+	animation: rotate360 1.5s linear 0s infinite normal;
+	transform-origin: 50% 50%;
+}
+
+.loading-container:hover .loading,
+.loading-container .loading{
+	transition: all 0.5s ease-in-out;
+}
+
+#loading-icon{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	max-width: 66px;
+	transform: translate(-50%, -50%);
+}
+
 hr:not([size]) {
 	margin: 20px 0;
 	border-color: #1a2d4a17;
@@ -2173,6 +2218,16 @@ ul.postbox__comment_ratings {
 /* -----------------------------------------------------------------------------
 # KeyFrames
 ----------------------------------------------------------------------------- */
+@keyframes rotate360{
+	0%{
+		transform: rotate(0deg);
+	}
+
+	100%{
+		transform: rotate(360deg);
+	}
+}
+
 @keyframes upDown {
 	0% {
 		transform: translateY(0px);
